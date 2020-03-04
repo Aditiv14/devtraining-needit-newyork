@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_map">
+    <sys_transform_map action="DELETE">
+        <active>true</active>
+        <copy_empty_fields>false</copy_empty_fields>
+        <create_new_record_on_empty_coalesce_fields>false</create_new_record_on_empty_coalesce_fields>
+        <enforce_mandatory_fields>All Fields</enforce_mandatory_fields>
+        <name>Import NeedIt record</name>
+        <order>100</order>
+        <run_business_rules>false</run_business_rules>
+        <run_script>true</run_script>
+        <script><![CDATA[(function transformRow(source, target, map, log, isUpdate) {
+
+// If the source data does not have a u_requested_for_email field, 
+  // create the target email address from the Requested for value.  Email addresses 
+  // have the format firstname.lastname@example.com.  Convert the u_requested_for 
+  // value to lowercase.  Replace the space with a . and concatenate with 
+  // @example.com
+  if(!("u_requested_for_email" in source)){
+ var name = source.u_requested_for.toLowerCase();
+ target.u_requested_for_email = name.replace(" ", ".") + "@example.com";
+  }
+
+})(source, target, map, log, action==="update");]]></script>
+        <source_table>x_58872_needit_needit_import</source_table>
+        <sys_class_name>sys_transform_map</sys_class_name>
+        <sys_created_by>aditi@14</sys_created_by>
+        <sys_created_on>2020-02-28 09:52:45</sys_created_on>
+        <sys_id>cc951034dbd30010f7d1f26b68961904</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Import NeedIt record</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_transform_map_cc951034dbd30010f7d1f26b68961904</sys_update_name>
+        <sys_updated_by>aditi@14</sys_updated_by>
+        <sys_updated_on>2020-02-28 10:45:41</sys_updated_on>
+        <target_table>x_58872_needit_needit</target_table>
+    </sys_transform_map>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>90ef12aedb0edf44439ef70fbf9619e7</instance_id>
+        <instance_name>dev59380</instance_name>
+        <name>sys_transform_map_cc951034dbd30010f7d1f26b68961904</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_transform_map"&gt;&lt;sys_transform_map action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;copy_empty_fields&gt;false&lt;/copy_empty_fields&gt;&lt;create_new_record_on_empty_coalesce_fields&gt;false&lt;/create_new_record_on_empty_coalesce_fields&gt;&lt;enforce_mandatory_fields&gt;All Fields&lt;/enforce_mandatory_fields&gt;&lt;name&gt;Import NeedIt record&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;run_business_rules&gt;false&lt;/run_business_rules&gt;&lt;run_script&gt;true&lt;/run_script&gt;&lt;script&gt;&lt;![CDATA[(function transformRow(source, target, map, log, isUpdate) {
+
+// If the source data does not have a u_requested_for_email field, 
+  // create the target email address from the Requested for value.  Email addresses 
+  // have the format firstname.lastname@example.com.  Convert the u_requested_for 
+  // value to lowercase.  Replace the space with a . and concatenate with 
+  // @example.com
+  if(!("u_requested_for_email" in source)){
+ var name = source.u_requested_for.toLowerCase();
+ target.u_requested_for_email = name.replace(" ", ".") + "@example.com";
+  }
+
+})(source, target, map, log, action==="update");]]&gt;&lt;/script&gt;&lt;source_table&gt;x_58872_needit_needit_import&lt;/source_table&gt;&lt;sys_class_name&gt;sys_transform_map&lt;/sys_class_name&gt;&lt;sys_created_by&gt;aditi@14&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-02-28 09:52:45&lt;/sys_created_on&gt;&lt;sys_id&gt;cc951034dbd30010f7d1f26b68961904&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Import NeedIt record&lt;/sys_name&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_transform_map_cc951034dbd30010f7d1f26b68961904&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;aditi@14&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-02-28 10:45:41&lt;/sys_updated_on&gt;&lt;target_table&gt;x_58872_needit_needit&lt;/target_table&gt;&lt;/sys_transform_map&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>143425493</payload_hash>
+        <record_name>Import NeedIt record</record_name>
+        <reverted_from/>
+        <source>ce4fde9cdb130010f7d1f26b6896199f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>aditi@14</sys_created_by>
+        <sys_created_on>2020-02-28 10:45:41</sys_created_on>
+        <sys_id>7fc12430db170010f7d1f26b68961935</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1708b66e7480000001</sys_recorded_at>
+        <sys_updated_by>aditi@14</sys_updated_by>
+        <sys_updated_on>2020-02-28 10:45:41</sys_updated_on>
+        <type>Table Transform Map</type>
+        <update_guid>f7c124302017001089b3efc590084535</update_guid>
+        <update_guid_history>f7c124302017001089b3efc590084535:143425493,95c65c38d7d300106b2f9a162039e174:-2117460629,28b5d4f497d30010838b2f0627559c17:1051521204</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>aditi@14</sys_created_by>
+        <sys_created_on>2020-02-28 11:26:30</sys_created_on>
+        <sys_db_object display_value="" name="sys_transform_map">sys_transform_map</sys_db_object>
+        <sys_id>10b2422e0c7f4d3d85eaa937e9742e49</sys_id>
+        <sys_metadata>cc951034dbd30010f7d1f26b68961904</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Import NeedIt record</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_transform_map_cc951034dbd30010f7d1f26b68961904</sys_update_name>
+        <sys_update_version display_value="sys_transform_map_cc951034dbd30010f7d1f26b68961904">7fc12430db170010f7d1f26b68961935</sys_update_version>
+        <sys_updated_by>aditi@14</sys_updated_by>
+        <sys_updated_on>2020-02-28 11:26:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

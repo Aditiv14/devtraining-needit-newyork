@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="Infooo" max_length="40" name="x_58872_needit_infooo" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Birthdate" label="Birthdate" max_length="40" name="u_birthdate" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=DU" label="DU" max_length="40" name="u_du" type="string"/>
+        <element attributes="import_attribute_name=Emp" label="Emp " max_length="40" name="u_emp" type="integer"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Name" label="Name" max_length="40" name="u_name" type="string"/>
+    </element>
+</database>
